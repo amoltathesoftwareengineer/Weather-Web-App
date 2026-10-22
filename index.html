@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101a35">
+  <meta name="description" content="A responsive weather app to check current weather conditions by city.">
+  <title>WeatherNow | Live Weather</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <a class="logo" href="./">☀ WeatherNow</a>
+      <span class="live-label"><span class="dot"></span> WEATHER DASHBOARD</span>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">YOUR WEATHER, AT A GLANCE</p>
+      <h1>Forecast your <span>day.</span></h1>
+      <p class="subtitle">Discover current weather conditions for any city.</p>
+
+      <form id="search-form" class="search-form">
+        <span aria-hidden="true">⌕</span>
+        <input
+          id="city-input"
+          type="search"
+          placeholder="Enter city name..."
+          aria-label="City name"
+          required
+        >
+        <button type="submit" id="search-button">Search weather</button>
+      </form>
+      <p id="status" class="status" role="status" aria-live="polite">
+        Search for a city to see its weather.
+      </p>
+    </section>
+
+    <section id="weather-panel" class="weather-panel" hidden>
+      <div class="weather-heading">
+        <div>
+          <p class="eyebrow">CURRENT CONDITIONS</p>
+          <h2 id="city-name">--</h2>
+          <p id="weather-description">--</p>
+        </div>
+        <img id="weather-icon" src="" alt="" width="100" height="100">
+      </div>
+
+      <div class="temperature">
+        <span id="temperature">--</span><span class="degree">°C</span>
+      </div>
+      <p id="feels-like" class="feels-like">Feels like --°C</p>
+
+      <div class="weather-stats">
+        <article class="stat-card">
+          <span class="stat-icon">💧</span>
+          <p>Humidity</p>
+          <strong id="humidity">--%</strong>
+        </article>
+        <article class="stat-card">
+          <span class="stat-icon">💨</span>
+          <p>Wind speed</p>
+          <strong id="wind-speed">-- km/h</strong>
+        </article>
+        <article class="stat-card">
+          <span class="stat-icon">🌡️</span>
+          <p>Pressure</p>
+          <strong id="pressure">-- hPa</strong>
+        </article>
+      </div>
+      <p id="updated-at" class="updated-at"></p>
+    </section>
+
+    <footer>
+      <p>WeatherNow · Built with HTML, CSS and JavaScript</p>
+      <p>Weather data provided by Open-Meteo.</p>
+    </footer>
+  </main>
+</body>
+</html>
